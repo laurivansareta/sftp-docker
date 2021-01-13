@@ -19,12 +19,19 @@ primeiro identificar o nome do container: `docker ps`, neste caso 'sftpdocker_se
 
 para isso executar: `docker exec -it sftpdocker_server_1 /bin/bash`
 
-
 **Conectar pelo SSH**
 
 comando `ssh master@container-ip -p 22`
 
-**Depois de conectado:**
+## Depois de conectado:
+
+**Para acessar SFTP:**
+
+`sftp inanzzz@container-ip`
+
+Agora é só executar os [comandos](https://winscp.net/eng/docs/scripting#commands) de navegação e manipulação dos arquivos.
+
+**Para criar novo usuário:**
 
 `sudo mkdir /uploads/inanzzz`
 
@@ -36,6 +43,14 @@ comando `ssh master@container-ip -p 22`
 
 `sudo chown inanzzz:sftp -R /uploads/inanzzz/upload`
 
+## Conectar com filezilla
+
+* Host: container-ip 
+* Port: 2222
+* Protocol: SFTP
+* Logon Type: Ask for password
+* Username: inanzzz
+* Password: inanzzz
 
 
 ## Fonte
